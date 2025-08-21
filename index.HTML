@@ -48,7 +48,7 @@
     <div class="swiper produk-swiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 1"></div>
-        <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 2"></div>
+        <div class="swiper-slide"><img src="https://picsum.photos/600/400?random=13" alt="Semua Produk 2"></div>
         <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 3"></div>
         <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 4"></div>
         <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 5"></div>
@@ -206,21 +206,18 @@
 </a>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Cari semua slider dengan class .produk-swiper
-    document.querySelectorAll('.produk-swiper').forEach(function (el) {
-      new Swiper(el, {
-        loop: true,               // supaya looping
-        autoplay: {
-          delay: 1000,            // ganti slide setiap 1 detik
-          disableOnInteraction: false, // tetap jalan meski user interaksi
-        },
-        slidesPerView: 1,         // tampil 1 gambar per slide
-        spaceBetween: 10,         // jarak antar slide
-        allowTouchMove: false,    // supaya tidak bisa di-drag manual
-      });
+  const sliders = document.querySelectorAll('.produk-swiper');
+  sliders.forEach(slider => {
+    new Swiper(slider, {
+      loop: true,
+      autoplay: {
+        delay: 1000, // ganti ke 3000 kalau mau 3 detik
+        disableOnInteraction: false,
+      },
     });
   });
+</script>
+
 </script>
 
 </body>

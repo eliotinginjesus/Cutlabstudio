@@ -113,7 +113,7 @@ body {
 .produk-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* 2 kolom */
-  gap: 1.5rem;
+  gap: 1.5rem; /* jarak antar gambar */
 }
 
 .produk-item {
@@ -122,29 +122,33 @@ body {
   border-radius: 8px;
 }
 
+/* Pastikan wrapper horizontal */
+.produk-swiper .swiper-wrapper {
+  display: flex;             /* supaya slide tersusun ke kanan */
+}
+
+
 /* Swiper container */
 .produk-swiper {
   width: 100%;
-  height: 300px;   /* tinggi fix frame */
-  border-radius: 8px;
-  overflow: hidden;
+  height: 300px;   /* tinggi seragam */
 }
 
-/* Pastikan wrapper dan slide memenuhi container */
-.produk-swiper .swiper-wrapper {
-  height: 100%;
-}
-
+/* Slide */
 .produk-swiper .swiper-slide {
-  width: 100%;
-  height: 100%; /* penting biar gak hilang */
+  flex-shrink: 0;
+  width: 100% !important;     /* biar 1 gambar = 1 slide */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .produk-swiper img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* crop sesuai frame */
+  object-fit: cover;   /* potong biar proporsional */
   display: block;
+  border-radius: 8px;
 }
 
 /* Caption overlay */
@@ -159,7 +163,6 @@ body {
   font-size: .9rem;
   text-align: center;
 }
-
 
 
 
