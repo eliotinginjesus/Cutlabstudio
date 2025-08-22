@@ -108,19 +108,54 @@ body {
 .produk h2 {
   color: #c00;
   margin-bottom: 2rem;
+  font-size: 2rem; /* ukuran font diperbesar */
 }
-
 .produk-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 kolom */
+  display: flex;
+  flex-direction: column;
   gap: 1.5rem; /* jarak antar gambar */
 }
 
-.produk-item {
+.baris-pertama,
+.baris-kedua,
+.baris-ketiga {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem; /* jarak antar gambar */
+}
+
+/* Semua produk punya tinggi sama */
+.produk-item1,
+.produk-item4,
+.produk-item5{
   position: relative;
   overflow: hidden;
-  border-radius: 8px;
+  width: 700px; 
+  height: 300px;          /* full kolom grid */  /* tinggi otomatis sama sesuai lebar */
 }
+
+/* Semua produk punya tinggi sama */
+.produk-item2,
+.produk-item3,
+.produk-item6 {
+  position: relative;
+  overflow: hidden;
+  width: 500px; /* lebar tetap 300px */
+  height: 300px;         /* full kolom grid */
+}
+
+.produk-item1 img,
+.produk-item2 img,
+.produk-item3 img,
+.produk-item4 img,
+.produk-item5 img,
+.produk-item6 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* gambar menyesuaikan frame */
+  display: block;
+}
+
 
 /* Pastikan wrapper horizontal */
 .produk-swiper .swiper-wrapper {
@@ -148,24 +183,29 @@ body {
   height: 100%;
   object-fit: cover;   /* potong biar proporsional */
   display: block;
-  border-radius: 8px;
 }
 
-/* Caption overlay */
-.produk-item figcaption {
+.produk-item1 figcaption,
+.produk-item2 figcaption,
+.produk-item3 figcaption,
+.produk-item4 figcaption,
+.produk-item5 figcaption,
+.produk-item6 figcaption {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(0,0,0,.6);
+  height: 100%; 
+  background: linear-gradient(to top, rgba(0,0,0,0.6) 20%, rgba(0,0,0,0) 80%);
   color: #fff;
-  padding: .5rem;
-  font-size: .9rem;
-  text-align: center;
+  display: flex;
+  align-items: flex-end; 
+  justify-content: left;
+  padding: 1rem;
+  font-size: 1.2rem; /* ukuran font diperbesar */
+  text-align: left;
+  font-weight: bold; 
 }
-
-
-
 /* Keunggulan */
 .keunggulan {
   padding: 3rem 0;
@@ -180,6 +220,7 @@ body {
 .keunggulan-text h2 {
   color: #c00;
   margin-bottom: 1rem;
+  font-size: 2rem;
 }
 .keunggulan-text ul {
   margin-bottom: 1.5rem;
@@ -190,7 +231,6 @@ body {
 }
 .keunggulan-img img {
   width: 480px;
-  border-radius: 6px;
   margin-left: auto;
 }
 
@@ -207,10 +247,12 @@ body {
 .alamat h2 {
   color: #c00;
   margin-bottom: 1rem;
+  font-size: 2rem;
 }
 .alamat-map iframe {
   border: 0;
-  border-radius: 6px;
+  width: 400px;
+  height: 400px; /* tinggi peta */
 }
 
 /* Footer */
@@ -229,7 +271,7 @@ body {
 }
 .footer-col h3 {
   margin-bottom: .5rem;
-  color: #c00;
+  color: rgb(255, 255, 255);
 }
 .footer-bottom {
   background-color: #c00;
