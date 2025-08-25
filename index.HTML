@@ -11,19 +11,26 @@
 
   <!-- Header -->
   <header class="site-header">
-    <div class="container header-inner">
-      <div class="logo">
-        <img src="https://i.imghippo.com/files/LEAO5745DUY.png" alt="CutLab Studio">
-      </div>
-      <nav class="nav" aria-label="Navigasi Utama">
-        <ul>
-          <li><a href="#produk">Produk</a></li>
-          <li><a href="#artikel">Artikel</a></li>
-          <li><a href="#kontak" class="btn-outline">Kontak Kami</a></li>
-        </ul>
-      </nav>
+  <div class="container header-inner">
+    <div class="logo">
+      <img src="https://i.imghippo.com/files/LEAO5745DUY.png" alt="CutLab Studio">
     </div>
-  </header>
+
+    <!-- Tombol hamburger -->
+    <button class="hamburger" aria-label="Menu">
+      ☰
+    </button>
+
+    <nav class="nav" aria-label="Navigasi Utama">
+      <ul>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#artikel">Artikel</a></li>
+        <li><a href="#kontak" class="btn-outline">Kontak Kami</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
 
   <!-- Hero -->
   <section class="hero">
@@ -48,12 +55,12 @@
   <figure class="produk-item1 semua-produk">
     <div class="swiper produk-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 1"></div>
-        <div class="swiper-slide"><img src="https://picsum.photos/600/400?random=13" alt="Semua Produk 2"></div>
-        <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 3"></div>
-        <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 4"></div>
-        <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 5"></div>
-        <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Semua Produk 6"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/bR6958pI.png" alt="Semua Produk 1"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/bR6958pI.png" alt="Semua Produk 2"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/bR6958pI.png" alt="Semua Produk 3"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/bR6958pI.png" alt="Semua Produk 4"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/bR6958pI.png" alt="Semua Produk 5"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/bR6958pI.png" alt="Semua Produk 6"></div>
       </div>
     </div>
     <figcaption>Semua Produk</figcaption>
@@ -63,12 +70,12 @@
   <figure class="produk-item2 cutting-pagar">
     <div class="swiper produk-swiper">
       <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="https://i.imghippo.com/files/r5059g.jpg" alt="Cutting Pagar 1"></div>
-        <div class="swiper-slide"><img src="https://picsum.photos/600/400?random=13"></div>
-        <div class="swiper-slide"><img src="https://picsum.photos/600/400?random=13"></div>
-        <div class="swiper-slide"><img src="https://picsum.photos/600/400?random=13"></div>
-        <div class="swiper-slide"><img src="https://picsum.photos/600/400?random=13"></div>
-        <div class="swiper-slide"><img src="https://picsum.photos/600/400?random=13"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/pdh9675Tk.png" alt="Cutting Pagar 1"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/pdh9675Tk.png"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/pdh9675Tk.png"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/pdh9675Tk.png"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/pdh9675Tk.png"></div>
+        <div class="swiper-slide"><img src="https://i.imghippo.com/files/pdh9675Tk.png"></div>
       </div>
     </div>
     <figcaption>Cutting Pagar</figcaption>
@@ -222,7 +229,13 @@
     });
   });
 </script>
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const nav = document.querySelector('.nav');
 
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
 </script>
 
 </body>
