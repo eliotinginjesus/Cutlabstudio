@@ -356,6 +356,32 @@ p a {
   height: 45px;
 }
 
+.legal-nav {
+  margin-left: auto; /* biar ke kanan */
+}
+
+.btn-home {
+   background: rgba(204, 0, 0, 0);
+  border:#a00 2px solid;
+  color: #a00;
+  padding: .6rem 1.2rem;
+  text-decoration: none;
+}
+
+.btn-home:hover {
+   background: #a00;
+  color: rgb(255, 255, 255);
+} 
+
+.legal-page {
+  max-width: 800px;      /* supaya teks tidak terlalu melebar */
+  margin: 40px auto;     /* auto = rata tengah, 40px atas & bawah */
+  padding: 20px;         /* jarak dalam box */
+  background: #fff;      /* putih (opsional kalau mau ada kotak) */
+  border-radius: 12px;   /* sudut sedikit membulat */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* bayangan lembut */
+}
+
 
 /* Responsive */
 @media(max-width: 992px) {
