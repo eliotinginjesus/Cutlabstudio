@@ -50,7 +50,7 @@ body {
 
 /* Hero */
 .hero {
-  background: url('https://i.imghippo.com/files/CL3804gqY.png') no-repeat center/cover;
+  background: url('https://i.imghippo.com/files/wdob2751u.png') no-repeat center/cover;
   color: #fff;
   min-height: 100vh;
   display: flex;
@@ -478,18 +478,20 @@ p a {
   background-size: cover;   /* supaya gambar selalu nutup hero */
   background-position: 80% 100%; /* atur posisi gambar */
   background-repeat: no-repeat;
+  min-height: 75vh;
+  height: auto; /* biar tidak terlalu tinggi di mobile */;
   }
 
    .hero::before {
     width: 100%;        /* penuh lebar */
-    height: 40%;        /* hanya setengah tinggi */
+    height: 50%;        /* hanya setengah tinggi */
     top: auto;          /* reset posisi atas */
     bottom: 0;          /* tempel di bawah */
     left: 0;            /* mulai dari kiri */
   }
   .hero .container {
     max-width: 100%;
-    max-height: 40%;
+    max-height: 50%;
     margin-bottom:10px;
     margin-left: 30px;
     margin-right: 30px;
@@ -502,14 +504,17 @@ p a {
     transform: translateX(-50%);
     width: 100%;
     padding: 0 20px;
+    place-content: 0px;
   }
   
   .hero h1 {
     font-size: 1.8rem;
+    margin-bottom: 10px;
   }
   .hero p {
     max-width: 100%;
     font-size: .95rem;
+    margin-bottom: 10px;
   }
 
 
