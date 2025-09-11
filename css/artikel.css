@@ -1,108 +1,183 @@
-/* ===================== */
-/* STYLE KHUSUS ARTIKEL  */
-/* ===================== */
-
-/* Layout grid artikel */
-.artikel-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  margin-top: 40px;
+/* ==== RESET & BASE ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Card tiap artikel */
-.artikel-item {
-  background: #fff;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-.artikel-item:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-
-/* Gambar artikel */
-.artikel-item img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
-
-/* Konten artikel */
-.artikel-content {
-  padding: 20px;
-}
-
-.artikel-content h3 {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 12px;
-  color: #333;
-}
-
-.artikel-content p {
-  font-size: 0.95rem;
-  color: #666;
+body {
+  font-family: "Inter", Arial, sans-serif;
   line-height: 1.6;
-  margin-bottom: 12px;
+  color: #333;
+  background: #fafafa;
 }
 
-/* Tanggal artikel */
-.artikel-date {
-  font-size: 0.85rem;
-  color: #999;
-  margin-bottom: 12px;
-  display: block;
+/* ==== LAYOUT ==== */
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
-/* Tombol navigasi / CTA */
-.artikel-content .btn {
-  display: inline-block;
-  padding: 10px 18px;
-  background: #FF6B00;
+/* ==== HEADER ==== */
+.site-header {
+  background: #111827;
+  padding: 1rem 0;
+  border-bottom: 3px solid #e11d48;
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.site-header .logo img {
+  max-height: 45px;
+}
+
+.legal-nav a {
   color: #fff;
-  font-size: 0.95rem;
+  text-decoration: none;
   font-weight: 500;
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  background: #e11d48;
+  border-radius: 6px;
   transition: background 0.3s ease;
+}
+
+.legal-nav a:hover {
+  background: #be123c;
+}
+
+/* ==== ARTICLE PAGE ==== */
+.article-page {
+  background: #fff;
+  padding: 3rem 2rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.article-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.article-page h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 1rem;
+  color: #e11d48;
+  border-left: 4px solid #e11d48;
+  padding-left: 0.6rem;
+}
+
+.article-page p {
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.article-page a {
+  color: #e11d48;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.article-page a:hover {
+  text-decoration: underline;
+}
+
+/* ==== LISTS ==== */
+.article-page ul, 
+.article-page ol {
+  margin: 1rem 0 1rem 1.5rem;
+  padding-left: 1rem;
+}
+
+.article-page li {
+  margin-bottom: 0.5rem;
+}
+
+/* ==== TABLES ==== */
+.article-page table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.05);
+}
+
+.article-page table thead {
+  background: #e11d48;
+  color: #fff;
+  text-align: left;
+}
+
+.article-page table th, 
+.article-page table td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.article-page table tr:nth-child(even) {
+  background: #f9fafb;
+}
+
+.article-page table tr:hover {
+  background: #f3f4f6;
+}
+
+/* ==== FOOTER ==== */
+.site-footer {
+  background: #111827;
+  color: #d1d5db;
+  padding: 2rem 0;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-col h3 {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-col a {
+  color: #e11d48;
   text-decoration: none;
 }
-.artikel-content .btn:hover {
-  background: #e65a00;
+
+.footer-col a:hover {
+  text-decoration: underline;
 }
 
-/* Search bar artikel */
-.artikel-search {
-  margin: 30px 0;
+.footer-middle {
   text-align: center;
-}
-.artikel-search input[type="text"] {
-  width: 60%;
-  max-width: 400px;
-  padding: 12px 16px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  outline: none;
-}
-.artikel-search input[type="text"]:focus {
-  border-color: #FF6B00;
-  box-shadow: 0 0 0 2px rgba(255,107,0,0.2);
+  margin-bottom: 1rem;
 }
 
-/* Responsif */
-@media (max-width: 992px) {
-  .artikel-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.footer-middle nav a {
+  color: #d1d5db;
+  margin: 0 0.5rem;
+  text-decoration: none;
 }
-@media (max-width: 600px) {
-  .artikel-grid {
-    grid-template-columns: 1fr;
-  }
-  .artikel-search input[type="text"] {
-    width: 90%;
-  }
+
+.footer-middle nav a:hover {
+  color: #e11d48;
+}
+
+.footer-bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #9ca3af;
 }
