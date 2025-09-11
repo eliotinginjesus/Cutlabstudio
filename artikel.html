@@ -3,175 +3,155 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Apa Itu Laser Cutting? Pengertian, Fungsi, Jenis, dan Harga | Cutlab Studio</title>
-  <meta name="description" content="Pelajari apa itu laser cutting: pengertian, fungsi, jenis, keunggulan, dan harga jasa laser cutting. Solusi presisi tinggi untuk industri kreatif, manufaktur, hingga UMKM.">
-  <link rel="stylesheet" href="css\style.css">
+  <title>Artikel - CutLab Studio</title>
+  <link rel="stylesheet" href="css/style.css"> <!-- CSS khusus artikel -->
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="https://i.imghippo.com/files/ZyO6848ik.png">
 </head>
 <body>
-
   <!-- Header -->
   <header class="site-header">
     <div class="container header-inner">
       <div class="logo">
-        <a href="https://cutlabstudio.id/">
-          <img src="logo.png" alt="Cutlab Studio Logo">
+        <a href="index.html">
+          <img src="https://i.imghippo.com/files/LEAO5745DUY.png" alt="CutLab Studio">
         </a>
       </div>
-      <nav class="nav">
+
+      <button class="hamburger" aria-label="Menu">☰</button>
+
+      <nav class="nav" aria-label="Navigasi Utama">
         <ul>
-          <li><a href="/">Beranda</a></li>
-          <li><a href="/layanan">Layanan</a></li>
-          <li><a href="/artikel">Artikel</a></li>
-          <li><a href="/kontak" class="btn-outline">Kontak</a></li>
+          <li><a href="index.html#produk">Produk</a></li>
+          <li><a href="artikel.html" class="active">Artikel</a></li>
+          <li><a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." class="btn-outline" target="_blank">Kontak Kami</a></li>
         </ul>
       </nav>
-      <button class="hamburger">☰</button>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="hero">
-    <img src="laser-cutting-hero.jpg" alt="Proses Laser Cutting" class="hero-bg">
-    <div class="container hero-content">
-      <h1>Apa Itu Laser Cutting? Pengertian, Fungsi, Jenis, dan Harga</h1>
-      <p>Laser cutting adalah teknologi pemotongan material presisi tinggi. Solusi modern untuk industri kreatif, manufaktur, hingga UMKM.</p>
-      <a href="https://cutlabstudio.id/" class="btn1">Pesan Jasa Laser Cutting</a>
+  <!-- Galeri Artikel -->
+  <section class="artikel">
+    <div class="container">
+      <h2>Artikel Terbaru</h2>
+
+      <!-- Search -->
+      <div class="artikel-search">
+        <input type="text" id="searchInput" placeholder="Cari artikel...">
+        <button onclick="cariArtikel()">Cari</button>
+      </div>
+
+      <div class="artikel-grid" id="artikelGrid">
+
+        <!-- Artikel 1 -->
+        <article class="artikel-item">
+          <a href="artikel-detail1.html">
+            <img src="https://i.imghippo.com/files/Cvk4738nUE.png" alt="Inspirasi Desain Pagar Laser Cutting" loading="lazy">
+            <h3>Inspirasi Desain Pagar Laser Cutting</h3>
+            <span class="artikel-tanggal">11 September 2025</span>
+            <p>Temukan berbagai desain pagar dengan sentuhan modern dan elegan menggunakan teknologi laser cutting.</p>
+          </a>
+        </article>
+
+        <!-- Artikel 2 -->
+        <article class="artikel-item">
+          <a href="artikel-detail2.html">
+            <img src="https://i.imghippo.com/files/VBrL7633jrQ.png" alt="Fasade Bangunan Estetik" loading="lazy">
+            <h3>Fasade Bangunan Estetik</h3>
+            <span class="artikel-tanggal">10 September 2025</span>
+            <p>Cara mempercantik fasade rumah atau gedung dengan panel laser cutting berkualitas tinggi.</p>
+          </a>
+        </article>
+
+        <!-- Artikel 3 -->
+        <article class="artikel-item">
+          <a href="artikel-detail3.html">
+            <img src="https://i.imghippo.com/files/dvC6097M.png" alt="Tips Memilih Jasa Laser Cutting" loading="lazy">
+            <h3>Tips Memilih Jasa Laser Cutting</h3>
+            <span class="artikel-tanggal">9 September 2025</span>
+            <p>Panduan memilih penyedia jasa laser cutting agar hasil sesuai dengan kebutuhan Anda.</p>
+          </a>
+        </article>
+
+        <!-- Artikel 4 -->
+        <article class="artikel-item">
+          <a href="artikel-detail4.html">
+            <img src="https://i.imghippo.com/files/krGZ2051prw.png" alt="Partisi Ruangan Modern" loading="lazy">
+            <h3>Partisi Ruangan Modern</h3>
+            <span class="artikel-tanggal">8 September 2025</span>
+            <p>Solusi membagi ruangan dengan partisi laser cutting yang fungsional sekaligus artistik.</p>
+          </a>
+        </article>
+
+        <!-- Artikel 5 -->
+        <article class="artikel-item">
+          <a href="artikel-detail5.html">
+            <img src="https://i.imghippo.com/files/kxo1559JAs.png" alt="Balkon dengan Panel Cutting" loading="lazy">
+            <h3>Balkon dengan Panel Cutting</h3>
+            <span class="artikel-tanggal">7 September 2025</span>
+            <p>Inspirasi desain balkon yang unik dan estetik menggunakan panel hasil cutting.</p>
+          </a>
+        </article>
+
+        <!-- Artikel 6 -->
+        <article class="artikel-item">
+          <a href="artikel-detail6.html">
+            <img src="https://i.imghippo.com/files/yEGk8716zJA.png" alt="Keunggulan Teknologi Laser Cutting" loading="lazy">
+            <h3>Keunggulan Teknologi Laser Cutting</h3>
+            <span class="artikel-tanggal">6 September 2025</span>
+            <p>Kenali manfaat teknologi laser cutting yang memberikan hasil presisi dan efisiensi tinggi.</p>
+          </a>
+        </article>
+
+      </div>
     </div>
   </section>
-
-  <!-- Artikel -->
-  <main class="container artikel">
-    <article class="legal-page">
-      <h2>Pengertian Laser Cutting</h2>
-      <p>Laser cutting adalah teknologi pemotongan material menggunakan sinar laser berdaya tinggi yang difokuskan pada satu titik sehingga mampu memotong berbagai bahan dengan presisi. Material yang bisa dipotong antara lain akrilik, kayu, MDF, kulit, kain, hingga logam.</p>
-      <p><strong>👉 Jika Anda butuh hasil potongan rapi tanpa harus membeli mesin mahal, gunakan jasa laser cutting profesional seperti <a href="https://cutlabstudio.id/">Cutlab Studio</a>.</strong></p>
-
-      <h2>Cara Kerja Laser Cutting</h2>
-      <ol>
-        <li><strong>Desain Digital</strong> – File dibuat menggunakan software desain.</li>
-        <li><strong>Penyetelan Mesin</strong> – Operator menyesuaikan kekuatan laser.</li>
-        <li><strong>Proses Pemotongan</strong> – Sinar laser fokus memotong/ukir material.</li>
-        <li><strong>Finishing</strong> – Hasil dicek dan dibersihkan.</li>
-      </ol>
-
-      <h2>Jenis-Jenis Laser Cutting</h2>
-      <ul>
-        <li><strong>Laser CO₂</strong> → cocok untuk non-logam (akrilik, kayu, kain).</li>
-        <li><strong>Laser Fiber</strong> → efektif untuk logam tipis–tebal.</li>
-        <li><strong>Nd:YAG Laser</strong> → untuk industri presisi tinggi.</li>
-      </ul>
-
-      <h2>Keunggulan Laser Cutting</h2>
-      <ul>
-        <li>Presisi Tinggi</li>
-        <li>Hasil Rapi & Konsisten</li>
-        <li>Proses Cepat & Efisien</li>
-        <li>Mendukung Berbagai Material</li>
-        <li>Lebih Hemat dalam Jangka Panjang</li>
-      </ul>
-      <p><strong>👉 Hemat waktu & biaya dengan menggunakan <a href="https://cutlabstudio.id/">jasa laser cutting dari Cutlab Studio</a>.</strong></p>
-
-      <h2>Aplikasi Laser Cutting</h2>
-      <ul>
-        <li>Industri Kreatif → aksesoris, dekorasi, merchandise custom.</li>
-        <li>Interior & Furniture → partisi, ornamen kayu/akrilik.</li>
-        <li>Manufaktur → komponen logam, pelat mesin.</li>
-        <li>Fashion & Kerajinan → motif kain, leather craft.</li>
-        <li>Advertising → huruf timbul, display produk.</li>
-      </ul>
-
-      <h2>Perbandingan Laser Cutting vs CNC Router vs Manual</h2>
-      <table border="1" cellspacing="0" cellpadding="8">
-        <thead>
-          <tr>
-            <th>Metode</th>
-            <th>Presisi</th>
-            <th>Kecepatan</th>
-            <th>Material</th>
-            <th>Hasil Akhir</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Manual</td>
-            <td>Rendah</td>
-            <td>Lama</td>
-            <td>Terbatas</td>
-            <td>Kasar</td>
-          </tr>
-          <tr>
-            <td>CNC Router</td>
-            <td>Sedang</td>
-            <td>Cukup Cepat</td>
-            <td>Kayu, MDF, akrilik</td>
-            <td>Cukup halus</td>
-          </tr>
-          <tr>
-            <td>Laser Cutting</td>
-            <td>Tinggi</td>
-            <td>Sangat Cepat</td>
-            <td>Akrilik, kayu, logam, kain</td>
-            <td>Sangat halus, detail</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h2>Harga Jasa Laser Cutting</h2>
-      <p>Harga jasa laser cutting bervariasi berdasarkan jenis dan ketebalan material, serta kerumitan desain. Kisaran umum:</p>
-      <ul>
-        <li>Akrilik tipis (2–3 mm) → Rp 5.000 – Rp 10.000 per cm</li>
-        <li>MDF 5 mm → Rp 15.000 – Rp 30.000 per cm</li>
-        <li>Logam tipis → Rp 50.000 – Rp 100.000 per cm</li>
-      </ul>
-      <p><strong>👉 Untuk estimasi akurat, hubungi <a href="https://cutlabstudio.id/">Cutlab Studio</a> yang menawarkan harga kompetitif dengan hasil berkualitas.</strong></p>
-
-      <h2>FAQ tentang Laser Cutting</h2>
-      <p><strong>1. Bisa untuk skala rumahan?</strong><br>Ya, banyak UMKM menggunakan jasa laser cutting untuk merchandise, gantungan kunci, dan dekorasi.</p>
-      <p><strong>2. Ketebalan maksimal?</strong><br>Fiber laser bisa memotong logam hingga 20 mm, CO₂ cocok untuk non-logam hingga 25 mm.</p>
-      <p><strong>3. Lebih hemat beli mesin atau pakai jasa?</strong><br>Untuk kebutuhan fleksibel, pakai jasa seperti <a href="https://cutlabstudio.id/">Cutlab Studio</a> jauh lebih hemat.</p>
-      <p><strong>4. Bisa untuk engraving?</strong><br>Ya, laser cutting juga bisa untuk ukiran detail.</p>
-
-      <h2>Kesimpulan</h2>
-      <p>Laser cutting adalah solusi modern untuk pemotongan material presisi tinggi, cepat, dan hasil rapi. Teknologi ini bermanfaat untuk industri kreatif, manufaktur, hingga UMKM.</p>
-      <p><strong>👉 Ingin hasil profesional tanpa investasi mesin? Percayakan pada <a href="https://cutlabstudio.id/">Cutlab Studio</a>.</strong></p>
-    </article>
-  </main>
 
   <!-- Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <div class="footer-col">
-        <h3>Cutlab Studio</h3>
-        <p>Jasa Laser Cutting Akrilik, Kayu, Logam, dan lainnya dengan hasil presisi & profesional.</p>
+        <h3>Kontak Kami</h3>
+        <p>085212830283 <br> contact.cutlabstudio@gmail.com</p>
       </div>
       <div class="footer-col">
-        <h3>Menu</h3>
-        <nav>
-          <a href="/">Beranda</a><br>
-          <a href="/layanan">Layanan</a><br>
-          <a href="/artikel">Artikel</a><br>
-          <a href="/kontak">Kontak</a>
-        </nav>
+        <h3>Jam Operasional</h3>
+        <p>Senin - Jumat: 08:00 - 20:00 WIB <br> Sabtu - Minggu: 08:00 - 15:00 WIB</p>
+      </div>
+      <div class="footer-col">
+        <h3>Social Media</h3>
+        <p>Instagram | Facebook | TikTok</p>
       </div>
     </div>
     <div class="footer-bottom">
-      <p>&copy; 2025 Cutlab Studio. All Rights Reserved.</p>
+      <p>Copyright © 2025 CutLabStudio. All rights reserved.</p>
     </div>
   </footer>
 
-  <!-- Floating WA -->
-  <a href="https://wa.me/6281234567890" class="wa-float">
-    <img src="wa-icon.png" alt="WhatsApp">
-  </a>
-
-  <!-- Script -->
   <script>
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
     hamburger.addEventListener('click', () => {
       nav.classList.toggle('active');
     });
-  </script>
 
+    // Search function
+    function cariArtikel() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const artikelItems = document.querySelectorAll('.artikel-item');
+      artikelItems.forEach(item => {
+        const judul = item.querySelector('h3').innerText.toLowerCase();
+        const deskripsi = item.querySelector('p').innerText.toLowerCase();
+        if (judul.includes(input) || deskripsi.includes(input)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // Live search (ketik langsung filter)
+    document.getElementById('searchInput').addEventListener('keyup', cariArtikel);
+  </script>
 </body>
 </html>
