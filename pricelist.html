@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KXWKKXL9');</script>
+  <!-- End Google Tag Manager -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pricelist - CutLab Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      line-height: 1.6;
+      color: #222;
+      background-color: #f8f9fa;
+    }
+    /* Container */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    /* Header */
+    .site-header {
+      background: #fff;
+      border-bottom: 1px solid #ddd;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .header-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: .4rem 0;
+    }
+    .nav ul {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+      align-items: center;
+    }
+    .nav a {
+      text-decoration: none;
+      color: #c00;
+      font-weight: bold;
+    }
+    .btn-outline {
+      border: 2px solid #c00;
+      padding: .4rem .8rem;
+      border-radius: 20px;
+    }
+    .logo img {
+      max-height: 70px;
+    }
+
+    /* Pricelist Styles */
+    .pricelist-section {
+      padding: 3rem 0;
+    }
+    .pricelist-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    .pricelist-header h1 {
+      font-size: 2.5rem;
+      color: #c00;
+      margin-bottom: 0.5rem;
+    }
+    .pricelist-header p {
+      color: #666;
+    }
+    .section-title {
+      font-size: 2rem;
+      color: #c00;
+      margin-bottom: 1.5rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+    .subsection-title {
+        font-size: 1.5rem;
+        color: #333;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+    }
+    .pricelist-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+    }
+    .product-card {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+    .product-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+    .product-card-content {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+    }
+    .product-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+    }
+    .product-card .price-display, .product-card .static-price {
+        font-size: 1.75rem;
+        font-weight: bold;
+        color: #222;
+        margin-top: auto; /* Pushes price to the bottom */
+        padding-top: 1rem;
+    }
+    .product-card .price-unit {
+        font-size: 1rem;
+        color: #666;
+    }
+    .btn-pesan {
+        display: block;
+        background: #c00;
+        color: #fff;
+        text-align: center;
+        padding: .75rem;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 1rem;
+        font-weight: bold;
+        transition: background-color 0.3s;
+    }
+    .btn-pesan:hover {
+        background: #a00;
+    }
+    
+    /* Tombol Density */
+     .density-description {
+        font-size: 0.875rem;
+        color: #666;
+        margin-bottom: 0.25rem;
+        font-weight: 600;
+    }
+    .density-options {
+        display: flex;
+        gap: 0.5rem;
+        margin: 0.75rem 0;
+    }
+    .density-btn {
+        border: 1px solid #ddd;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        font-size: 0.875rem;
+        cursor: pointer;
+        background: #fff;
+        transition: all 0.2s;
+    }
+    .density-btn.active {
+        background-color: #c00;
+        color: white;
+        border-color: #c00;
+    }
+    .density-btn:not(.active):hover {
+        background-color: #f4f4f4;
+    }
+
+    /* Grafir Details */
+    .grafir-details {
+        margin: 0.75rem 0;
+        font-size: 0.9rem;
+        flex-grow: 1;
+    }
+     .grafir-details p {
+        margin-bottom: 0.25rem;
+     }
+
+    /* Syarat & Ketentuan */
+    .terms-section {
+        margin-top: 3rem;
+        background: #fff;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+    .terms-section h2 {
+        text-align: center;
+        font-size: 1.8rem;
+        color: #c00;
+        margin-bottom: 1.5rem;
+    }
+    .terms-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+    .terms-grid h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+    .terms-grid ul {
+        list-style: disc;
+        padding-left: 1.2rem;
+    }
+    .terms-grid li {
+        margin-bottom: 0.5rem;
+    }
+    .highlight-note {
+        background: #fffbe6;
+        padding: 0.75rem;
+        border-radius: 5px;
+        border-left: 3px solid #f59e0b;
+    }
+    
+    /* Footer */
+    p a {
+      color: #fff;
+      text-decoration: underline;
+      text-decoration-color: #fff;
+    }
+    .site-footer {
+      background: #222;
+      color: #fff;
+      padding: 2rem 0 0;
+    }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 1rem;
+    }
+    .footer-col h3 {
+      margin-bottom: .5rem;
+    }
+    .footer-bottom {
+      background-color: #c00;
+      padding: 1rem;
+      font-size: .9rem;
+      text-align: center; 
+    }
+    .footer-middle {
+        padding: 1rem;
+        font-size: .9rem;
+        text-align: center;
+        border-top: 1px solid #444;
+        border-bottom: 1px solid #444;
+    }
+    .footer-middle nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .footer-middle nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .footer-bottom p {
+        padding: 0.5rem;
+    }
+
+    /* Floating WhatsApp Button */
+    .wa-float {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px;
+        right: 20px;
+        background: #c00;
+        color: #fff;
+        border-radius: 50%;
+        text-align: center;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform 0.3s ease;
+    }
+    .wa-float:hover {
+      transform: scale(1.1);
+    }
+    .wa-float img {
+      width: 45px;
+      height: 45px;
+    }
+
+    /* Hamburger */
+    .hamburger {
+        font-size: 1.8rem;
+        background: none;
+        border: none;
+        color: #c00;
+        cursor: pointer;
+        display: none;
+    }
+
+    /* Responsive */
+    @media(max-width: 992px) {
+        .pricelist-grid {
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        }
+    }
+    @media(max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+      .nav {
+        position: absolute;
+        top: 70px;
+        right: 0;
+        background: #fff;
+        width: 200px;
+        padding: 1rem;
+        border: 1px solid #ddd;
+        display: none;
+        flex-direction: column;
+        gap: 1rem;
+        text-align: right;
+        z-index: 999;
+      }
+      .nav.active {
+        display: flex;
+      }
+      .nav ul {
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      .footer-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .terms-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXWKKXL9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">
+        <a href="index.html"><img src="https://i.imghippo.com/files/LEAO5745DUY.png" alt="CutLab Studio"></a>
+      </div>
+      <button class="hamburger" aria-label="Menu">☰</button>
+      <nav class="nav" aria-label="Navigasi Utama">
+        <ul>
+          <li><a href="index.html#produk">Galeri</a></li>
+          <li><a href="pricelist.html">Pricelist</a></li>
+          <li><a href="https://cutlabstudio.id/blog/">Artikel</a></li>
+          <li><a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." class="btn-outline" target="_blank">Kontak Kami</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pricelist-section">
+    <div class="container">
+      <div class="pricelist-header">
+        <h1>Daftar Harga Jasa Cutting</h1>
+        <p>Harga tidak termasuk bahan material.</p>
+      </div>
+      
+      <!-- Section CNC Router -->
+      <section>
+        <h2 class="section-title">Jasa Cutting CNC Router</h2>
+        <div class="pricelist-grid">
+            <!-- CNC Products -->
+            <div class="product-card" 
+                 data-price-low="100000" data-price-med="150000" data-price-high="200000" 
+                 data-product-name="CNC MDF/PVC 3mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Partisi ruangan hasil cutting CNC" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">MDF / PVC / WPC (3 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 100.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20CNC%20MDF/PVC%203mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="150000" data-price-med="200000" data-price-high="250000" 
+                 data-product-name="CNC MDF/PVC 6mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Partisi ruangan hasil cutting CNC" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">MDF / PVC / WPC (6 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 150.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20CNC%20MDF/PVC%206mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="150000" data-price-med="200000" data-price-high="250000" 
+                 data-product-name="CNC MDF/PVC 9mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Partisi ruangan hasil cutting CNC" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">MDF / PVC / WPC (9 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 150.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20CNC%20MDF/PVC%209mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="200000" data-price-med="250000" data-price-high="300000" 
+                 data-product-name="CNC MDF/PVC 12mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Partisi ruangan hasil cutting CNC" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">MDF / PVC / WPC (12 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 200.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20CNC%20MDF/PVC%2012mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+             <div class="product-card" 
+                  data-price-low="250000" data-price-med="300000" data-price-high="350000" 
+                  data-product-name="CNC MDF/PVC 15mm"
+                  data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                  data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                  data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Partisi ruangan hasil cutting CNC" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">MDF / PVC / WPC (15 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 250.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20CNC%20MDF/PVC%2015mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+             <div class="product-card" 
+                  data-price-low="300000" data-price-med="350000" data-price-high="400000" 
+                  data-product-name="CNC MDF/PVC 18mm"
+                  data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                  data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                  data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Partisi ruangan hasil cutting CNC" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">MDF / PVC / WPC (18 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 300.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20CNC%20MDF/PVC%2018mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="100000" data-price-med="150000" data-price-high="200000" 
+                 data-product-name="CNC ACP 3-4mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Fasad gedung modern dengan panel ACP" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">ACP (3-4 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 100.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20CNC%20untuk%20ACP" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Section Laser Cutting Metal -->
+      <section>
+        <h2 class="section-title" style="margin-top: 3rem;">Jasa Laser Cutting Metal</h2>
+         <div class="pricelist-grid">
+            <div class="product-card" 
+                 data-price-low="250000" data-price-med="300000" data-price-high="350000" 
+                 data-product-name="Laser Plat Besi 0,5-1mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Proses laser cutting plat besi" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">Plat Besi (0,5 - 1 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 250.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20Plat%20Besi%200,5-1mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="300000" data-price-med="350000" data-price-high="400000" 
+                 data-product-name="Laser Plat Besi 1,2-2mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Proses laser cutting plat besi" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">Plat Besi (1,2 - 2 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 300.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20Plat%20Besi%201,2-2mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="350000" data-price-med="400000" data-price-high="450000" 
+                 data-product-name="Laser Plat Besi 3mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Proses laser cutting plat besi" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">Plat Besi (3 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 350.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20Plat%20Besi%203mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="400000" data-price-med="450000" data-price-high="500000" 
+                 data-product-name="Laser Plat Besi 4mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Proses laser cutting plat besi" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">Plat Besi (4 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 400.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20Plat%20Besi%204mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="450000" data-price-med="500000" data-price-high="550000" 
+                 data-product-name="Laser Plat Besi 5mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Proses laser cutting plat besi" class="product-image">
+                <div class="product-card-content">
+                  <h3 class="product-title">Plat Besi (5 MM)</h3>
+                  <p class="density-description">Kepadatan Motif:</p>
+                  <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                  <p class="price-display">Rp 450.000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20Plat%20Besi%205mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+      </section>
+
+      <!-- Section 3D Wall Panel -->
+      <section>
+        <h2 class="section-title" style="margin-top: 3rem;">3D Wall Panel</h2>
+         <div class="pricelist-grid">
+            <div class="product-card">
+                <img src="https://i.imghippo.com/files/YeVd6476QM.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=3D+Panel+Standar';" alt="Interior ruangan dengan 3D wall panel motif geometris">
+                <div class="product-card-content">
+                  <h3 class="product-title">3D Wall Panel Standar (15 MM)</h3>
+                  <p class="static-price">Rp. 550,000</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%203D%20Wall%20Panel%20Standar." class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+             <div class="product-card">
+                <img src="https://i.imghippo.com/files/yaLV4544qrw.png" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=3D+Panel+Ukir';" alt="Panel dinding kayu dengan ukiran rumit dan mewah">
+                <div class="product-card-content">
+                  <h3 class="product-title">3D Wall Panel Ukir (15-40 MM)</h3>
+                  <p class="static-price">Rp. 750rb - 1,5jt</p>
+                  <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%203D%20Wall%20Panel%20Ukir." class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- Section Laser CO2 -->
+      <section>
+        <h2 class="section-title" style="margin-top: 3rem;">Jasa Cutting Laser CO2</h2>
+        <h3 class="subsection-title">Cutting Motif / Karawang (Harga /m2)</h3>
+        <div class="pricelist-grid">
+            <!-- CO2 Karawang Products -->
+            <div class="product-card" 
+                 data-price-low="25000" data-price-med="50000" data-price-high="75000" 
+                 data-product-name="Laser CO2 Karawang 1.5-2mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Laser cutting akrilik" class="product-image">
+                <div class="product-card-content">
+                    <h3 class="product-title">Akrilik / Plywood (1.5 - 2 MM)</h3>
+                    <p class="density-description">Kepadatan Motif:</p>
+                    <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                    <p class="price-display">Rp 25.000</p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20CO2%20Karawang%201.5-2mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+             <div class="product-card" 
+                  data-price-low="50000" data-price-med="75000" data-price-high="100000" 
+                  data-product-name="Laser CO2 Karawang 3-4mm"
+                  data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                  data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                  data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Laser cutting akrilik" class="product-image">
+                <div class="product-card-content">
+                    <h3 class="product-title">Akrilik / Plywood (3 - 4 MM)</h3>
+                    <p class="density-description">Kepadatan Motif:</p>
+                    <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                    <p class="price-display">Rp 50.000</p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20CO2%20Karawang%203-4mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="75000" data-price-med="100000" data-price-high="125000" 
+                 data-product-name="Laser CO2 Karawang 5-6mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Laser cutting akrilik" class="product-image">
+                <div class="product-card-content">
+                    <h3 class="product-title">Akrilik / Plywood (5 - 6 MM)</h3>
+                    <p class="density-description">Kepadatan Motif:</p>
+                    <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                    <p class="price-display">Rp 75.000</p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20CO2%20Karawang%205-6mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="125000" data-price-med="150000" data-price-high="175000" 
+                 data-product-name="Laser CO2 Karawang 8mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Laser cutting akrilik" class="product-image">
+                <div class="product-card-content">
+                    <h3 class="product-title">Akrilik / Plywood (8 MM)</h3>
+                    <p class="density-description">Kepadatan Motif:</p>
+                    <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                    <p class="price-display">Rp 125.000</p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20CO2%20Karawang%208mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="150000" data-price-med="200000" data-price-high="250000" 
+                 data-product-name="Laser CO2 Karawang 10mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Laser cutting akrilik" class="product-image">
+                <div class="product-card-content">
+                    <h3 class="product-title">Akrilik / Plywood (10 MM)</h3>
+                    <p class="density-description">Kepadatan Motif:</p>
+                    <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                    <p class="price-display">Rp 150.000</p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20CO2%20Karawang%2010mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="200000" data-price-med="250000" data-price-high="300000" 
+                 data-product-name="Laser CO2 Karawang 12mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Laser cutting akrilik" class="product-image">
+                <div class="product-card-content">
+                    <h3 class="product-title">Akrilik / Plywood (12 MM)</h3>
+                    <p class="density-description">Kepadatan Motif:</p>
+                    <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                    <p class="price-display">Rp 200.000</p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20CO2%20Karawang%2012mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="250000" data-price-med="300000" data-price-high="350000" 
+                 data-product-name="Laser CO2 Karawang 15mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Laser cutting akrilik" class="product-image">
+                <div class="product-card-content">
+                    <h3 class="product-title">Akrilik / Plywood (15 MM)</h3>
+                    <p class="density-description">Kepadatan Motif:</p>
+                    <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                    <p class="price-display">Rp 250.000</p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20CO2%20Karawang%2015mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="350000" data-price-med="400000" data-price-high="450000" 
+                 data-product-name="Laser CO2 Karawang 18mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Laser cutting akrilik" class="product-image">
+                <div class="product-card-content">
+                    <h3 class="product-title">Akrilik / Plywood (18 MM)</h3>
+                    <p class="density-description">Kepadatan Motif:</p>
+                    <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                    <p class="price-display">Rp 350.000</p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20CO2%20Karawang%2018mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card" 
+                 data-price-low="450000" data-price-med="500000" data-price-high="550000" 
+                 data-product-name="Laser CO2 Karawang 20mm"
+                 data-img-low="https://i.imghippo.com/files/enD1288Q.png"
+                 data-img-med="https://i.imghippo.com/files/BX8507WU.png"
+                 data-img-high="https://i.imghippo.com/files/ooH1303RU.png">
+                <img src="https://i.imghippo.com/files/enD1288Q.png" alt="Laser cutting akrilik" class="product-image">
+                <div class="product-card-content">
+                    <h3 class="product-title">Akrilik / Plywood (20 MM)</h3>
+                    <p class="density-description">Kepadatan Motif:</p>
+                    <div class="density-options"><button class="density-btn active" data-density="low">Low</button><button class="density-btn" data-density="med">Med</button><button class="density-btn" data-density="high">High</button></div>
+                    <p class="price-display">Rp 450.000</p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20CO2%20Karawang%2020mm" class="whatsapp-link btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+        <h3 class="subsection-title">Cutting CNC Huruf (Harga /cm Tinggi Huruf)</h3>
+         <div class="pricelist-grid">
+            <!-- CNC Huruf Products -->
+             <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614928228253-dc092451556e?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Cutting+Huruf';" alt="Huruf timbul akrilik">
+                <div class="product-card-content">
+                    <h3 class="product-title">Cutting CNC Huruf (1.5 - 2 MM)</h3>
+                    <p class="static-price">Rp 1.000 <span class="price-unit">/cm</span></p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Cutting%20CNC%20Huruf%201.5-2mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614928228253-dc092451556e?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Cutting+Huruf';" alt="Huruf timbul akrilik">
+                <div class="product-card-content">
+                    <h3 class="product-title">Cutting CNC Huruf (3 - 4 MM)</h3>
+                    <p class="static-price">Rp 1.500 <span class="price-unit">/cm</span></p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Cutting%20CNC%20Huruf%203-4mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614928228253-dc092451556e?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Cutting+Huruf';" alt="Huruf timbul akrilik">
+                <div class="product-card-content">
+                    <h3 class="product-title">Cutting CNC Huruf (5 - 6 MM)</h3>
+                    <p class="static-price">Rp 2.000 <span class="price-unit">/cm</span></p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Cutting%20CNC%20Huruf%205-6mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614928228253-dc092451556e?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Cutting+Huruf';" alt="Huruf timbul akrilik">
+                <div class="product-card-content">
+                    <h3 class="product-title">Cutting CNC Huruf (8 MM)</h3>
+                    <p class="static-price">Rp 2.500 <span class="price-unit">/cm</span></p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Cutting%20CNC%20Huruf%208mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614928228253-dc092451556e?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Cutting+Huruf';" alt="Huruf timbul akrilik">
+                <div class="product-card-content">
+                    <h3 class="product-title">Cutting CNC Huruf (10 MM)</h3>
+                    <p class="static-price">Rp 3.000 <span class="price-unit">/cm</span></p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Cutting%20CNC%20Huruf%2010mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+             <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614928228253-dc092451556e?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Cutting+Huruf';" alt="Huruf timbul akrilik">
+                <div class="product-card-content">
+                    <h3 class="product-title">Cutting CNC Huruf (12 MM)</h3>
+                    <p class="static-price">Rp 3.500 <span class="price-unit">/cm</span></p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Cutting%20CNC%20Huruf%2012mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+             <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614928228253-dc092451556e?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Cutting+Huruf';" alt="Huruf timbul akrilik">
+                <div class="product-card-content">
+                    <h3 class="product-title">Cutting CNC Huruf (15 MM)</h3>
+                    <p class="static-price">Rp 4.000 <span class="price-unit">/cm</span></p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Cutting%20CNC%20Huruf%2015mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+             <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614928228253-dc092451556e?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Cutting+Huruf';" alt="Huruf timbul akrilik">
+                <div class="product-card-content">
+                    <h3 class="product-title">Cutting CNC Huruf (18 MM)</h3>
+                    <p class="static-price">Rp 4.500 <span class="price-unit">/cm</span></p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Cutting%20CNC%20Huruf%2018mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+             <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1614928228253-dc092451556e?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Cutting+Huruf';" alt="Huruf timbul akrilik">
+                <div class="product-card-content">
+                    <h3 class="product-title">Cutting CNC Huruf (20 MM)</h3>
+                    <p class="static-price">Rp 5.000 <span class="price-unit">/cm</span></p>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Cutting%20CNC%20Huruf%2020mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+         </div>
+        <h3 class="subsection-title">Laser Grafir (Harga /cm2)</h3>
+        <div class="pricelist-grid">
+             <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1506484381205-f7945653044d?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Laser+Grafir';" alt="Grafir laser pada kayu">
+                <div class="product-card-content">
+                    <h3 class="product-title">Laser Grafir (Kedalaman: 0.5 MM)</h3>
+                    <div class="grafir-details">
+                        <p><strong>Polos:</strong> Rp 500 /cm²</p>
+                        <p><strong>3D:</strong> Rp 750 /cm²</p>
+                        <p><strong>Foto:</strong> Rp 1.500 /cm²</p>
+                    </div>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20Grafir%200.5mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1506484381205-f7945653044d?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Laser+Grafir';" alt="Grafir laser pada kayu">
+                <div class="product-card-content">
+                    <h3 class="product-title">Laser Grafir (Kedalaman: 1 MM)</h3>
+                    <div class="grafir-details">
+                        <p><strong>Polos:</strong> Rp 750 /cm²</p>
+                        <p><strong>3D:</strong> Rp 1.000 /cm²</p>
+                    </div>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20Grafir%201mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+             <div class="product-card">
+                <img src="https://images.unsplash.com/photo-1506484381205-f7945653044d?q=80&w=800&auto=format&fit=crop" onerror="this.onerror=null;this.src='https://placehold.co/600x400/e2e8f0/333?text=Laser+Grafir';" alt="Grafir laser pada kayu">
+                <div class="product-card-content">
+                    <h3 class="product-title">Laser Grafir (Kedalaman: 2 MM)</h3>
+                     <div class="grafir-details">
+                        <p><strong>Polos:</strong> Rp 1.000 /cm²</p>
+                        <p><strong>3D:</strong> Rp 1.250 /cm²</p>
+                    </div>
+                    <a href="https://wa.me/6285212830283?text=Halo,%20saya%20tertarik%20Jasa%20Laser%20Grafir%202mm" class="btn-pesan">Pesan Sekarang</a>
+                </div>
+            </div>
+        </div>
+      </section>
+      
+      <!-- Syarat dan Ketentuan -->
+      <div class="terms-section">
+        <h2>Informasi Tambahan & Ketentuan</h2>
+        <div class="terms-grid">
+            <div>
+                <h3>Catatan Material</h3>
+                 <ul>
+                    <li class="highlight-note">Untuk bahan <strong>Kayu Solid</strong> & <strong>Acrylic</strong> (CNC Router), dikenakan tambahan <strong>Rp. 100,000</strong>.</li>
+                    <li>Bahan Plywood/Multiplex maksimal tebal 6mm.</li>
+                    <li>Bahan MDF maksimal tebal 6mm.</li>
+                    <li>Bahan Karton tebal 3mm.</li>
+                    <li>Untuk pekerjaan Grafir, minimum order Rp 150.000.</li>
+                </ul>
+            </div>
+            <div>
+                 <h3>Syarat Umum</h3>
+                <ul>
+                    <li>Harga tidak termasuk finishing.</li>
+                    <li>Harga tidak termasuk pemasangan.</li>
+                    <li>Harga tidak termasuk antar jemput material.</li>
+                    <li>Pemesanan diproses setelah DP minimal 50% (di luar harga bahan).</li>
+                </ul>
+            </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-col">
+        <h3>Kontak Kami</h3>
+        <p><img src="https://i.imghippo.com/files/RdH2163lLQ.png" alt="Phone" width="14" style="display:inline-block; margin-right: 8px;"> 085212830283</p>
+        <p><img src="https://i.imghippo.com/files/tyt3363DiI.png" alt="WhatsApp" width="14" style="display:inline-block; margin-right: 8px;"> <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." target="_blank">085212830283</a></p>
+        <p><img src="https://i.imghippo.com/files/fWA7248aY.png" alt="Email" width="14" style="display:inline-block; margin-right: 8px;"> contact.cutlabstudio@gmail.com</p>
+      </div>
+      <div class="footer-col">
+        <h3>Jam Operasional</h3>
+        <p><img src="https://i.imghippo.com/files/cEo6005OI.png" alt="clock" width="14" style="display:inline-block; margin-right: 8px;"> Senin - Jumat: 08:00 - 20:00 WIB</p>
+        <p><img src="https://i.imghippo.com/files/cEo6005OI.png" alt="clock" width="14" style="display:inline-block; margin-right: 8px;"> Sabtu - Minggu: 08:00 - 15:00 WIB</p>
+      </div>
+      <div class="footer-col">
+        <h3>Social Media</h3>
+        <p>Instagram | Facebook | TikTok</p>
+      </div>
+    </div>
+    <div class="footer-middle">
+      <nav>
+        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="term.html">Term Conditions</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">
+      <p>Copyright © 2025 Cutlabstudio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." class="wa-float" target="_blank" aria-label="Chat WhatsApp">
+    <img src="https://i.imghippo.com/files/NjU2329duA.png" alt="WhatsApp">
+  </a>
+
+  <script>
+    // Script untuk menu hamburger mobile
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.nav');
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+
+    // Script untuk mengubah harga dan gambar berdasarkan density
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('.product-card').forEach(card => {
+            const priceDisplay = card.querySelector('.price-display');
+            const productImage = card.querySelector('.product-image');
+            if (!priceDisplay || !productImage) return;
+
+            const densityButtons = card.querySelectorAll('.density-btn');
+            const whatsappLink = card.querySelector('.whatsapp-link');
+            const productName = card.dataset.productName;
+
+            const prices = {
+                low: card.dataset.priceLow,
+                med: card.dataset.priceMed,
+                high: card.dataset.priceHigh
+            };
+            
+            const images = {
+                low: card.dataset.imgLow,
+                med: card.dataset.imgMed,
+                high: card.dataset.imgHigh
+            };
+
+            densityButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    densityButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const selectedDensity = button.dataset.density;
+                    
+                    // Update Harga
+                    const price = prices[selectedDensity];
+                    if (price) {
+                      priceDisplay.textContent = `Rp ${new Intl.NumberFormat('id-ID').format(price)}`;
+                    }
+
+                    // Update Gambar
+                    const imageSrc = images[selectedDensity];
+                    if (imageSrc) {
+                        productImage.src = imageSrc;
+                    }
+
+                    // Update Link WhatsApp
+                    const densityText = selectedDensity.charAt(0).toUpperCase() + selectedDensity.slice(1);
+                    const newText = `Halo, saya tertarik Jasa ${productName} (Density: ${densityText}).`;
+                    whatsappLink.href = `https://wa.me/6285212830283?text=${encodeURIComponent(newText)}`;
+                });
+            });
+        });
+    });
+  </script>
+
+</body>
+</html>
+
