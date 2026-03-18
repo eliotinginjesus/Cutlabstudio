@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-KXWKKXL9');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CutLab Studio</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Open Sans"', 'sans-serif'],
+          },
+          colors: {
+            brand: '#c00',
+            brandDark: '#a00',
+            dark: '#222'
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="font-sans text-dark leading-relaxed m-0 p-0 box-border bg-white">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXWKKXL9"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <header class="bg-white border-b border-[#ddd] sticky top-0 z-[1000]">
+    <div class="w-[90%] max-w-[1200px] mx-auto flex justify-between items-center py-1.5 max-md:gap-2">
+      <div class="logo">
+        <img src="images/logo-cutlab.png" alt="CutLab Studio" class="max-h-[70px]">
+      </div>
+      <button class="hamburger text-[1.8rem] text-brand bg-none border-none cursor-pointer hidden max-md:block" aria-label="Menu" id="hamburger-btn">☰</button>
+      
+      <nav class="nav max-md:hidden max-md:absolute max-md:top-[70px] max-md:right-0 max-md:bg-white max-md:w-[200px] max-md:p-4 max-md:border max-md:border-[#ddd] max-md:z-[999] max-md:text-right" aria-label="Navigasi Utama" id="nav-menu">
+        <ul class="flex gap-5 list-none max-md:flex-col max-md:gap-4 m-0 p-0">
+          <li><a href="#produk" class="text-brand font-bold no-underline">Galeri</a></li>
+          <li><a href="hargaproduk.html" class="text-brand font-bold no-underline">Harga Produk</a></li>
+          <li><a href="https://cutlabstudio.id/blog/" class="text-brand font-bold no-underline">Artikel</a></li>
+          <li><a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." class="border-2 border-brand px-3 py-1 text-brand font-bold no-underline hover:bg-brand hover:text-white transition" target="_blank">Kontak Kami</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="relative text-white min-h-screen flex items-center justify-start pl-[5%] overflow-hidden max-md:pl-0 max-md:justify-end max-md:text-center max-md:min-h-[75vh] max-md:h-auto">
+    <img src="images/hero-cutlab.png" alt="CutLab Studio" loading="lazy" class="absolute inset-0 w-full h-full object-cover -z-10 max-md:object-[90%_100%]">
+    <div class="absolute inset-0 w-1/2 h-full bg-brand/60 z-0 max-md:w-full max-md:h-1/2 max-md:top-auto max-md:bottom-0"></div>
+    
+    <div class="relative z-10 w-[90%] max-w-[50%] max-md:w-full max-md:max-w-full max-md:mx-auto max-md:mb-[10px] max-md:px-5 max-md:absolute max-md:bottom-[40px] max-md:left-1/2 max-md:-translate-x-1/2">
+      <h1 class="text-[2.5rem] mb-4 max-md:text-[1.8rem] max-md:mb-2.5 font-bold">CutLab Studio</h1>
+      <p class="mb-6 max-w-[400px] max-md:max-w-full max-md:text-[0.95rem] max-md:mb-2.5 max-md:mx-auto">Solusi pemotongan yang tepat & berkualitas<br>
+      Melayani Jasa Laser Cutting dan CNC Router Jakarta, Bogor, Depok, Tangerang, Bekasi.</p>
+      <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." class="bg-transparent border-2 border-white text-white py-2.5 px-5 no-underline hover:bg-brandDark transition max-md:block max-md:w-max max-md:mx-auto inline-block">Konsultasi Sekarang</a>
+    </div>
+  </section>
+
+  <section id="produk" class="py-12 text-center">
+    <div class="w-[90%] max-w-[1200px] mx-auto">
+      <h2 class="text-brand mb-8 text-[2rem] font-bold">Produk Kami</h2>
+      <div class="flex flex-col gap-6 max-lg:gap-4">
+        
+        <div class="flex flex-row gap-6 max-lg:flex-col max-lg:items-center">
+          <figure class="relative overflow-hidden w-[500px] h-full max-lg:w-full max-lg:h-auto group">
+            <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." target="_blank" class="block w-full h-full">
+              <div class="swiper produk-swiper flex justify-center items-center overflow-hidden object-contain max-lg:h-[220px]">
+                <div class="swiper-wrapper flex">
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-1.png" alt="Semua Produk 1" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-2.png" alt="Semua Produk 2" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-3.png" alt="Semua Produk 3" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-4.png" alt="Semua Produk 4" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-5.png" alt="Semua Produk 5" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-6.png" alt="Semua Produk 6" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-7.png" alt="Semua Produk 7" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-8.png" alt="Semua Produk 8" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-9.png" alt="Semua Produk 9" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-10.png" alt="Semua Produk 10" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-11.png" alt="Semua Produk 11" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-12.png" alt="Semua Produk 12" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-13.png" alt="Semua Produk 13" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-14.png" alt="Semua Produk 14" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/semua-produk-15.png" alt="Semua Produk 15" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                </div>
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-black/60 via-transparent to-transparent text-white flex items-end p-4 text-[1.2rem] text-left font-bold max-h-[300px] max-lg:text-[1rem] max-lg:p-2.5">Semua Produk</figcaption>
+            </a>
+          </figure>
+          
+          <figure class="relative overflow-hidden w-[700px] h-full max-lg:w-full max-lg:h-auto group">
+            <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." target="_blank" class="block w-full h-full">
+              <div class="swiper produk-swiper flex justify-center items-center overflow-hidden object-contain max-lg:h-[220px]">
+                <div class="swiper-wrapper flex">
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/pdh9675Tk.png" alt="Cutting Pagar 1" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/FMN9338xk.png" alt="Cutting Pagar 2" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/MfYZ7107ABM.png" alt="Cutting Pagar 3" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/VFBe9518RuM.png" alt="Cutting Pagar 4" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/OxtG1167NrY.png" alt="Cutting Pagar 5" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/dMql4797gSA.png" alt="Cutting Pagar 6" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/VBrL7633jrQ.png" alt="Cutting Pagar 7" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/Jfqx9880Gdc.png" alt="Cutting Pagar 8" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/uL8620Boc.png" alt="Cutting Pagar 9" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/yjIa5090aYc.png" alt="Cutting Pagar 10" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/Nr5576Wc.png" alt="Cutting Pagar 11" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/ldZX8662rI.png" alt="Cutting Pagar 12" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/HDMz9673W.png" alt="Cutting Pagar 13" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                </div>
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-black/60 via-transparent to-transparent text-white flex items-end p-4 text-[1.2rem] text-left font-bold max-h-[300px] max-lg:text-[1rem] max-lg:p-2.5">Cutting Pagar</figcaption>
+            </a>
+          </figure>
+        </div>
+
+        <div class="flex flex-row gap-6 max-lg:flex-col max-lg:items-center">
+          <figure class="relative overflow-hidden w-[700px] h-full max-lg:w-full max-lg:h-auto group">
+            <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." target="_blank" class="block w-full h-full">
+              <div class="swiper produk-swiper flex justify-center items-center overflow-hidden object-contain max-lg:h-[220px]">
+                <div class="swiper-wrapper flex">
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/Gyo7633rAc.png" alt="Cutting Fasade 1" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/mj3641fUk.png" alt="Cutting Fasade 2" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/F4515mZA.png" alt="Cutting Fasade 3" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/coO1762MY.png" alt="Cutting Fasade 4" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/Vj7450HY.png" alt="Cutting Fasade 5" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/gqn7486TOE.png" alt="Cutting Fasade 6" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/oopX7609TZ.png" alt="Cutting Fasade 7" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/PJB6897Xg.png" alt="Cutting Fasade 8" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/cOn7001x.png" alt="Cutting Fasade 9" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/ino2101RYk.png" alt="Cutting Fasade 10" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/gWL3401Hc.png" alt="Cutting Fasade 11" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/QDk3680hQo.png" alt="Cutting Fasade 12" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                </div>
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-black/60 via-transparent to-transparent text-white flex items-end p-4 text-[1.2rem] text-left font-bold max-h-[300px] max-lg:text-[1rem] max-lg:p-2.5">Cutting Fasade</figcaption>
+            </a>
+          </figure>
+          
+          <figure class="relative overflow-hidden w-[500px] h-full max-lg:w-full max-lg:h-auto group">
+            <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." target="_blank" class="block w-full h-full">
+              <div class="swiper produk-swiper flex justify-center items-center overflow-hidden object-contain max-lg:h-[220px]">
+                <div class="swiper-wrapper flex">
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/xYvH2797XI.png" alt="Cutting Mihrab 1" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/CxgE5588ihQ.png" alt="Cutting Mihrab 2" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/nrDA4709f.png" alt="Cutting Mihrab 3" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/BtY4718ljk.png" alt="Cutting Mihrab 4" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/Svz3317ZUU.png" alt="Cutting Mihrab 5" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                </div>
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-black/60 via-transparent to-transparent text-white flex items-end p-4 text-[1.2rem] text-left font-bold max-h-[300px] max-lg:text-[1rem] max-lg:p-2.5">Cutting Mihrab</figcaption>
+            </a>
+          </figure>
+        </div>
+
+        <div class="flex flex-row gap-6 max-lg:flex-col max-lg:items-center">
+          <figure class="relative overflow-hidden w-[500px] h-full max-lg:w-full max-lg:h-auto group">
+            <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." target="_blank" class="block w-full h-full">
+              <div class="swiper produk-swiper flex justify-center items-center overflow-hidden object-contain max-lg:h-[220px]">
+                <div class="swiper-wrapper flex">
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/krGZ2051prw.png" alt="Cutting Partisi 1" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/YOCK7564VBg.png" alt="Cutting Partisi 2" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/QKM3430Tns.png" alt="Cutting Partisi 3" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/pAKo4169RjI.png" alt="Cutting Partisi 4" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/PyWs7984igo.png" alt="Cutting Partisi 5" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/wVI7615vxs.png" alt="Cutting Partisi 6" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/hXpN3093iRs.png" alt="Cutting Partisi 7" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/RWi1520nBw.png" alt="Cutting Partisi 8" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/yEx5078yNA.png" alt="Cutting Partisi 9" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/qDjq5309fH.png" alt="Cutting Partisi 10" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/jk9510LKM.png" alt="Cutting Partisi 11" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                </div>
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-black/60 via-transparent to-transparent text-white flex items-end p-4 text-[1.2rem] text-left font-bold max-h-[300px] max-lg:text-[1rem] max-lg:p-2.5">Cutting Partisi</figcaption>
+            </a>
+          </figure>
+          
+          <figure class="relative overflow-hidden w-[700px] h-full max-lg:w-full max-lg:h-auto group">
+            <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." target="_blank" class="block w-full h-full">
+              <div class="swiper produk-swiper flex justify-center items-center overflow-hidden object-contain max-lg:h-[220px]">
+                <div class="swiper-wrapper flex">
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/kxo1559JAs.png" alt="Cutting Balkon 1" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/iCK2202f.png" alt="Cutting Balkon 2" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/rKzK8376tvM.png" alt="Cutting Balkon 3" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                  <div class="swiper-slide flex-shrink-0 w-full flex items-center justify-center"><img src="images/LUex3044u.png" alt="Cutting Balkon 4" loading="lazy" class="w-full h-auto max-h-[400px] m-auto object-contain max-lg:h-full max-lg:object-cover max-lg:object-center max-lg:rounded-lg"></div>
+                </div>
+              </div>
+              <figcaption class="absolute inset-x-0 bottom-0 h-full bg-gradient-to-t from-black/60 via-transparent to-transparent text-white flex items-end p-4 text-[1.2rem] text-left font-bold max-h-[300px] max-lg:text-[1rem] max-lg:p-2.5">Cutting Balkon</figcaption>
+            </a>
+          </figure>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 m-r-0">
+    <div class="w-[90%] max-w-[1200px] mx-auto flex gap-16 items-center justify-between max-md:flex-col max-md:gap-8 max-md:text-justify">
+      <div class="max-w-[400px]">
+        <h2 class="text-brand mb-4 text-[2rem] font-bold text-left">Mengapa Memilih Kami</h2>
+        <ul class="mb-6 list-none p-0">
+          <li class="mb-3"><strong>Konsultasi Gratis</strong><br>Dapatkan arahan dari tim ahli kami untuk memastikan hasil sesuai kebutuhan Anda.</li>
+          <li class="mb-3"><strong>Gratis Survei Lokasi</strong><br>Kami siap datang untuk mengukur dan menyesuaikan desain langsung di lokasi Anda.</li>
+          <li class="mb-3"><strong>Hasil Presisi Tinggi</strong><br>Menggunakan mesin berteknologi tinggi untuk akurasi dan detail maksimal.</li>
+          <li class="mb-3"><strong>Layanan Produksi 24 Jam</strong><br>Siap mendukung kebutuhan proyek Anda dengan proses cepat dan berkualitas.</li>
+        </ul>
+        <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." class="inline-block bg-transparent border-2 border-brandDark text-brandDark py-2.5 px-5 no-underline hover:bg-brandDark hover:text-white transition max-md:block max-md:mx-auto max-md:w-max">Konsultasi Sekarang</a>
+      </div>
+      <div class="ml-auto max-md:w-full">
+        <img src="images/JrW5942KA.png" alt="Tim ahli sedang bekerja" loading="lazy" class="w-[480px] max-w-full max-md:mx-auto max-md:max-w-[350px]">
+      </div>
+    </div>
+  </section>
+
+  <section id="alamat" class="py-12">
+    <div class="w-[90%] max-w-[1200px] mx-auto flex gap-8 items-start justify-between max-md:flex-col max-md:gap-6 max-md:text-center">
+      <div class="text-left max-md:text-center">
+        <h2 class="text-brand mb-4 text-[2rem] font-bold">Alamat Kami</h2>
+        <p class="mb-2"><strong>Head Office:</strong><br>Jl. Kubur Islam No 64, Kebayoran Lama, Jakarta Selatan. 12220</p>
+        <p class="mb-2"><strong>Workshop I:</strong><br>Jl. Kubur Islam No 64, Kebayoran Lama, Jakarta Selatan. 12220</p>
+        <p class="mb-2"><strong>Workshop II:</strong><br>RT 001/008, Cimuning, Mustika Jaya, Kota Bekasi</p>
+        <p class="mb-2"><strong>Workshop III:</strong><br>Jl. Sabi No 08 Pondok Jagung Tim., Tangsel Banten. 15326</p>
+      </div>
+      <div class="w-[400px] h-[400px] max-md:w-full max-md:relative max-md:pb-[70%] max-md:h-0 max-md:overflow-hidden max-md:rounded-xl max-md:shadow-md max-md:my-4">
+        <iframe src="https://www.google.com/maps/d/embed?mid=1fdx9MDHZksagqIOIroilHmWvrLBCwwY&ehbc=2E312F" allowfullscreen loading="lazy" class="border-0 w-full h-full max-md:absolute max-md:top-0 max-md:left-0"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-dark text-white pt-8">
+    <div class="w-[90%] max-w-[1200px] mx-auto flex justify-between gap-8 mb-4 h-[150px] max-md:flex-col max-md:items-center max-md:h-auto max-md:text-center">
+      <div class="max-md:mb-4">
+        <h3 class="mb-2 text-white font-bold text-lg">Kontak Kami</h3>
+        <p class="mb-1"><img src="images/RdH2163lLQ.png" alt="Phone" width="14" class="inline"> 085212830283</p>
+        <p class="mb-1"><img src="images/tyt3363DiI.png" alt="WhatsApp" width="14" class="inline"> <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." target="_blank" class="text-white underline decoration-white hover:text-gray-300">085212830283</a><br>
+        <img src="images/fWA7248aY.png" alt="Email" width="14" class="inline mt-1"> contact.cutlabstudio@gmail.com</p>
+      </div>
+      <div class="max-md:mb-4">
+        <h3 class="mb-2 text-white font-bold text-lg">Jam Operasional</h3>
+        <p class="mb-1"><img src="images/cEo6005OI.png" alt="clock" width="14" class="inline"> Senin - Jumat: 08:00 - 20:00 WIB<br><img src="images/cEo6005OI.png" alt="clock" width="14" class="inline"> Sabtu - Minggu: 08:00 - 15:00 WIB</p>
+      </div>
+      <div class="max-md:mb-4">
+        <h3 class="mb-2 text-white font-bold text-lg">Social Media</h3>
+        <p>Instagram | Facebook | TikTok</p>
+      </div>
+    </div>
+    
+    <div class="p-2 text-[0.9rem] text-center h-full">
+      <nav class="flex justify-center gap-8 max-md:flex-col max-md:gap-2">
+        <a href="privacypolicy.html" class="text-white no-underline hover:underline">Privacy Policy</a>
+        <a href="term.html" class="text-white no-underline hover:underline">Term Conditions</a>
+        <a href="disclaimer.html" class="text-white no-underline hover:underline">Disclaimer</a>
+      </nav>
+    </div>
+    <div class="bg-brand pt-[0.10rem] text-[0.9rem] text-center pb-1">
+      <p class="py-2 m-0 text-white">Copyright © 2025 Cutlabstudio. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <a href="https://wa.me/6285212830283?text=Halo%20CutLab%20Studio,%20saya%20ingin%20konsultasi." class="fixed w-[60px] h-[60px] bottom-5 right-5 bg-brand text-white rounded-full flex items-center justify-center shadow-[0_2px_8px_rgba(0,0,0,0.3)] z-[999] hover:scale-110 transition-transform" target="_blank" aria-label="Chat WhatsApp">
+    <img src="images/NjU2329duA.png" alt="WhatsApp" class="w-[45px] h-[45px]">
+  </a>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    // Inisialisasi Slider
+    const sliders = document.querySelectorAll('.produk-swiper');
+    sliders.forEach(slider => {
+      new Swiper(slider, {
+        loop: true,
+        autoplay: {
+          delay: 2000,
+          disableOnInteraction: false,
+        },
+      });
+    });
+
+    // Hamburger Menu Logic (Tailwind version)
+    const hamburger = document.getElementById('hamburger-btn');
+    const nav = document.getElementById('nav-menu');
+    
+    hamburger.addEventListener('click', () => {
+      nav.classList.toggle('max-md:hidden');
+      nav.classList.toggle('max-md:flex');
+      nav.classList.toggle('max-md:flex-col');
+    });
+  </script>
+</body>
+</html>
